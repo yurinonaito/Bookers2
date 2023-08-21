@@ -1,12 +1,24 @@
-<h1>Books</h1>
 
-<% @books.each do |book| %>
+<h1><strong>Books</strong></h1>
 
-<p>Title</p>
-<span><%= book.title %></span>
+  <table>
+    <thead>
+    <tr>
+      <th><strong>Title</strong></th>
+      <th><strong>Opinion</strong></th>
+    </tr>
+    </thead>
+  <tbody>
+    <% @books.each do |book| %>
+  <tr>
+  <td><%= book.title %></td>
+  <td><%= book.body %></td>
+  </tr>
+  <% end %>
 
-<% end %>
-  
+  </tbody>
+</table>
+
   
 <h1><strong>New Book</strong></h1>
 
