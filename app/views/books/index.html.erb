@@ -1,3 +1,4 @@
+<%= render 'books/book', book: @book, user: @user %>
 
 <h1><strong>Books</strong></h1>
 
@@ -20,16 +21,3 @@
 
   </tbody>
 </table>
-
-  
-<h1><strong>New Book</strong></h1>
-
-<%= form_with model: @book do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  
-  <%= f.submit 'Create Book' %>
-<% end %>
