@@ -1,10 +1,13 @@
-<h1>Books</h1>
+<h1>Book detail</h1>
 
-<h2>Title</h2>
-<p><%= @book.title %></p>
-
-<h2>Opinion</h2>
-<p><%= @book.body %></p>
-
-<%= link_to "edit", edit_book_path(@book.id) %>
-<%= link_to "delete", destroy_book_path(@book.id), method: :delete, "data_confirm" => "本当に削除しますか?"
+<table>
+  <tbody>
+<tr>
+  <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
+  <td><%= link_to @book.title, book_path(@book) %></td>
+  <td><%= @book.body %></td>
+  <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+  <td><%= link_to "Destroy", book_path(@book.id), method: :delete, data: { confirm: "本当に消しますか?" } %></td>
+</tr>
+  </tbody>
+</table>
